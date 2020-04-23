@@ -1,0 +1,20 @@
+<div class="container">    
+    <hr>
+    <div class="card">
+        <div class="card-header">
+        <h1>Postagens</h1>
+        </div>
+        {{#each posts}}
+        <div class="card-body">
+            <h2 class="card-title">{{dataValues.titulo}}</h2>
+        <p class="card-text">{{dataValues.conteudo}}</p>
+        <p>Criado em:<small class="card-text">{{dataValues.createdAt}}</small></p>
+        <a class="btn btn-danger" href="/deletar/{{dataValues.id}}"><i class="icon-trash"></i> </a>
+        
+        {{!-- https://fontawesome.com/v3.2.1/icon/trash --}}
+        </div>
+        <hr>
+        {{/each}}
+        <hr>  
+    </div>
+</div>
