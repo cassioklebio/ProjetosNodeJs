@@ -1,0 +1,25 @@
+<div class="container">
+    <form action="/add" method="POST" >
+        <div class="form-group">
+            <label for="exampleInputTitulo">Titulo</label>
+            <input type="text" name="titulo" class="form-control" id="exampleInputTitulo" aria-describedby="titulo" placeholder="Titulo">
+            <small id="titulo" name="titulo" class="form-text text-muted">Digite o Titulo da Postagem</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormConteudo">Conteudo</label>
+            <textarea name="conteudo" class="form-control rounded-0" id="exampleFormConteudo" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Cadastrar Postagem</button>
+        </div>
+    </form>
+</div>
+
+{{!-- <form>
+    <p>Titulo:</p>
+    <input type="text" name="titulo">
+    <p>Conteudo:</p>
+    <textarea name="conteudo"></textarea>
+    <button type="submit">Cadastrar postagem</button>
+
+</form> --}}
