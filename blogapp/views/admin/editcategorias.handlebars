@@ -1,0 +1,36 @@
+  {{>_navbar}}
+  {{>_sideBar}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h2">Edição de Categorias</h2>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+             
+            </div>
+            
+        </div>            
+    </div> 
+    <div class="card">
+       <div class="card-body">
+         {{#each erros}}
+            <div class="alert alert-danger">{{texto}}</div>
+          {{else}}
+
+         {{/each}}
+         <form action="/admin/categorias/edit" method="POST">
+  <div class="form-group">
+    <input type="hidden" name="id" value="{{categoria._id}}">
+    <label for="InputCategora">Categoria</label>
+    <input type="text" class="form-control" name="categoria" id="InputCategora" aria-describedby="categoria" placeholder="Nome da Categoria" value="{{categoria.categoria}}">
+    <small id="categoria" class="form-text text-muted">Digite a categoria.</small>
+  </div>
+  <div class="form-group">
+    <label for="InputSlug">Slug</label>
+    <input type="text" class="form-control" id="InputSlug" name="slug" aria-describedby="slugCategoria" placeholder="Slug da Categoria" value="{{categoria.slug}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Editar categoria</button>
+</form>
+      </div>
+</div>
+   
+</main>

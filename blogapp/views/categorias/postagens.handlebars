@@ -1,0 +1,20 @@
+{{>_navbarp}}
+<br>
+<br>
+<br>
+<br>
+<div class="container ">
+     {{#each postagens}}
+        <div class="card mt-3">
+            <h5 class="card-header">{{titulo}}</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{descricao}}</h5>
+                <a class="btn btn-primary btn-lg" href="/postagem/{{slug}}" role="button">Leia mais...</a>
+                <small>Criado em: {{data}}</small>
+                
+            </div>
+        </div>
+    {{else}}
+        <h5>Nenhuma postagem cadastrada</h5>
+    {{/each}} 
+</div>

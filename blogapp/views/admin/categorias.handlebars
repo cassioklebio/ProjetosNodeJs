@@ -1,0 +1,61 @@
+  {{>_navbar}}
+  {{>_sideBar}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+    {{>_msg}}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        
+        <h2 class="h2">Lista de Categorias</h2>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <a class="btn btn-sm btn-outline-secondary" href="/admin/categorias/add" role="button">Nova Categoria</a>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            
+        </div>            
+    </div> 
+    <div class="card">
+      
+        <div class="card-body">
+            
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Slug</th>
+      <th scope="col">date</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+       {{#each categorias}}
+    <tr>
+      <td>#</td>
+      <td>{{categoria}}</td>
+      <td>{{slug}}</td>
+      <td>{{date}}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+           <a href="/admin/categorias/edit/{{_id}}" type="button" class="btn btn-light"><i class="icon-pencil"></i></a>
+           <a href="/admin/categorias/deletar/{{_id}}" type="button" class="btn btn-danger"><i class="icon-trash"></i></i></a>
+          
+        </div>
+          
+          
+          
+      </td>
+    </tr>
+    {{else}}
+        <h4>Nenhuma categoria registrada!!!</h4>
+        {{/each}}
+  </tbody>
+</table>
+       
+        
+        
+        </div>
+        <hr>
+        
+        <hr>  
+    </div>
+</main>

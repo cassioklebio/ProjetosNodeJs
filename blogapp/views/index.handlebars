@@ -1,0 +1,25 @@
+{{>_navbarp}}
+<div class="container pt-20 mb-4">
+    <div class="jumbotron">
+        <h1 class="display-4 mt-2">Bem Vindo ao blog do Node</h1>
+        <p class="lead">Este é um Blog simples desenvolvido com Node.js + Express + MongoDB</p>
+        <hr class="my-4">
+        <p>Aqui você vai poder ler sobre as novidades do mundo da computação</p>
+        <a class="btn btn-primary btn-lg" href="" role="button">Crie Conta</a>
+    </div>
+    <h2>Postagens recentes</h2>
+    <hr>
+    {{#each postagens}}
+        <div class="card mt-3">
+            <h5 class="card-header">{{titulo}}</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{descricao}}</h5>
+                <a class="btn btn-primary btn-lg" href="/postagem/{{slug}}" role="button">Leia mais...</a>
+                <small>Criado em: {{data}}</small>
+                <small>Categoria {{categoria.categoria}}</small>
+            </div>
+        </div>
+    {{else}}
+        <h5>Nenhuma postagem cadastrada</h5>
+    {{/each}}    
+</div>
