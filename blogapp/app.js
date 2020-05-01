@@ -14,6 +14,7 @@ require("./models/Categoria")
 const Postagem = mongoose.model("postagens")
 const Categoria = mongoose.model("categorias")
 
+
 //Configurações 
     //Sessão
     app.use(session({
@@ -105,6 +106,8 @@ const Categoria = mongoose.model("categorias")
     })
 
     app.use('/admin', admin)
+
+    
     
 
 

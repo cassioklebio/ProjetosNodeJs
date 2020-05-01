@@ -2,12 +2,15 @@ const express = require('express')
 const router = express.Router()
 const routerPostagem = require('./postagem')
 const routerCategoria = require('./categoria')
+const routerUsuario = require('./usuario')
 
 
 //Rota de Postagem
 router.use(routerPostagem)
 //Rota de Categoria
 router.use(routerCategoria)
+//Rota de Usuario
+router.use(routerUsuario)
 
 
 router.get('/', (req, res) =>{
