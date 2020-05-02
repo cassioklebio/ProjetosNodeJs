@@ -9,15 +9,15 @@
     <div class="col-sm">
     </div>
     <div class="col-sm">
-       {{#each erros}}
-          <div class="alert alert-danger">{{texto}}</div>
-       {{else}}
+       {{#if error}}
+          <div class="alert alert-danger">{{error}}</div>
+      {{else}}
 
-       {{/each}}
+      {{/if}}
       <div class="card">
         <h5 class="card-header">Login</h5>
         <div class="card-body">
-            <form action="/admin/usuario/registro" method="POST">
+            <form action="/admin/usuario/login" method="POST">
               <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>

@@ -14,12 +14,20 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Postagem</a>
       </li>
+      {{#if user}}
+        <li class="nav-item">
+        <a class="nav-link" href="/admin/logout">Sair</a>
+        
+      </li>
+      {{else}}
        <li class="nav-item">
         <a class="nav-link" href="/admin/login">Login</a>
+        {{user.email}}
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/admin/registro">Registro</a>
       </li>
+      {{/if}}
       
     </ul>
   </div>

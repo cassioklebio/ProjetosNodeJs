@@ -3,6 +3,8 @@ const router = express.Router()
 const routerPostagem = require('./postagem')
 const routerCategoria = require('./categoria')
 const routerUsuario = require('./usuario')
+const {eAdmin} = require("../helpers/eAdmin")
+
 
 
 //Rota de Postagem
@@ -13,7 +15,7 @@ router.use(routerCategoria)
 router.use(routerUsuario)
 
 
-router.get('/', (req, res) =>{
+router.get('/',eAdmin, (req, res) =>{
     res.render("admin/index")
     //res.send("Página principal do painel ADM")
 })

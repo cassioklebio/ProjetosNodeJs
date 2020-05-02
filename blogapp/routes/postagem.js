@@ -5,9 +5,10 @@ require("../models/Postagem")
 const Postagem = mongoose.model('postagens')
 require('../models/Categoria')
 const Categoria = mongoose.model('categorias')
+const {eAdmin} = require("../helpers/eAdmin")
 
 //Postagens
-routerPostagem.get('/postagens',(req, res)=>{
+routerPostagem.get('/postagens', eAdmin, (req, res)=>{
     Postagem.find().lean().populate("categoria").sort({data:"desc"}).then((postagens)=>{
         res.render("admin/postagens", {postagens: postagens})
     }).catch((err)=>{
@@ -16,7 +17,7 @@ routerPostagem.get('/postagens',(req, res)=>{
     })
 })
 
-routerPostagem.get('/postagens/add',(req, res)=>{
+routerPostagem.get('/postagens/add', eAdmin,(req, res)=>{
     Categoria.find().lean().then((categorias) =>{
         res.render("admin/addpostagem", {categorias: categorias})
     }).catch((err) =>{
@@ -25,7 +26,7 @@ routerPostagem.get('/postagens/add',(req, res)=>{
     })
 })
 
-routerPostagem.post('/postagens/nova', (req, res)=>{
+routerPostagem.post('/postagens/nova',eAdmin, (req, res)=>{
     
     var erros = []
 
@@ -73,7 +74,7 @@ routerPostagem.post('/postagens/nova', (req, res)=>{
 
 })
 
-routerPostagem.get('/postagens/edit/:id', (req, res)=>{
+routerPostagem.get('/postagens/edit/:id',eAdmin, (req, res)=>{
     Postagem.findOne({_id:req.params.id}).lean().then((postagem)=>{
         Categoria.find().lean().then((categorias)=>{
             
@@ -89,7 +90,7 @@ routerPostagem.get('/postagens/edit/:id', (req, res)=>{
     
 })
 
-routerPostagem.post('/postagens/edit', (req, res)=>{
+routerPostagem.post('/postagens/edit',eAdmin, (req, res)=>{
 
     Postagem.findOne({_id: req.body.id}).then((postagem) =>{
         
@@ -112,7 +113,7 @@ routerPostagem.post('/postagens/edit', (req, res)=>{
     })
 })
 
-routerPostagem.get("/postagens/deletar/:id", (req, res)=>{
+routerPostagem.get("/postagens/deletar/:id",eAdmin, (req, res)=>{
     Postagem.deleteOne({_id: req.params.id}).then(()=>{
         res.flash("success_msg", "Postagem deletada com sucesso")
         res.redirect("/admin/postagens")
