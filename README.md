@@ -1,4 +1,4 @@
-![Node js](https://walde.co/wp-content/uploads/2016/09/nodejs_logo.png)
+![Node js](https://walde.co/wp-content/uploads/2016/09/nodejs_logo.png =100x20)
 # ProjetosNodeJs
 #### Projetos criado utilizando o NodeJS + Express + MongoDB
 ## API
