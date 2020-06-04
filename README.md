@@ -1,3 +1,4 @@
+![Node js](https://walde.co/wp-content/uploads/2016/09/nodejs_logo.png)
 # ProjetosNodeJs
 #### Projetos criado utilizando o NodeJS + Express + MongoDB
 ## API
